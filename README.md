@@ -1,5 +1,11 @@
 # SyncedStore CRDT
 
+> [!IMPORTANT]
+> _An important note from the maintainer of this fork_
+> 
+> I intend to only update the dependencies and very minimally make any other changes. No feature updates are planned as of this time. I will usually accept pull requests after I've had the chance to review them.
+
+
 [![npm version](https://badge.fury.io/js/%40syncedstore%2Fcore.svg)](https://badge.fury.io/js/%40syncedstore%2Fcore) [![Coverage Status](https://coveralls.io/repos/github/YousefED/SyncedStore/badge.svg?branch=main)](https://coveralls.io/github/YousefED/SyncedStore?branch=main)
 
 <a href="https://discord.gg/exFZg6X2XU"><img alt="Discord" src="https://img.shields.io/badge/Chat on discord%20-%237289DA.svg?&style=for-the-badge&logo=discord&logoColor=white"/></a>
