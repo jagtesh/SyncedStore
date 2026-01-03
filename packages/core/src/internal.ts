@@ -1,3 +1,4 @@
+/// <reference path="./yjs-extensions.d.ts" />
 import { markRaw } from "@reactivedata/reactive";
 import * as Y from "yjs";
 import { getYjsValue } from ".";

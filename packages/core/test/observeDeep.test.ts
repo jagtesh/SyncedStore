@@ -17,6 +17,7 @@ describe("observeDeep", () => {
     beforeEach(() => {
       fnSpy1 = jest.fn(() => {});
       fnSpy2 = jest.fn(() => {});
+      doc1 = new Y.Doc();
       store = syncedStore(
         {
           arr: [],
@@ -30,26 +31,26 @@ describe("observeDeep", () => {
         observeDeep(store, fnSpy1);
         observeDeep(store.object, fnSpy2);
         store.arr.push(5);
-        expect(fnSpy1).toBeCalledTimes(1);
-        expect(fnSpy2).toBeCalledTimes(0);
+        expect(fnSpy1).toHaveBeenCalledTimes(1);
+        expect(fnSpy2).toHaveBeenCalledTimes(0);
       });
 
       it("observeDeep on nested object", () => {
         observeDeep(store.object, fnSpy1);
     
         store.arr.push(5);
-        expect(fnSpy1).toBeCalledTimes(0);
+        expect(fnSpy1).toHaveBeenCalledTimes(0);
 
         store.object.nested = 4;
-        expect(fnSpy1).toBeCalledTimes(1);
+        expect(fnSpy1).toHaveBeenCalledTimes(1);
       });
 
       it("observeDeep on nested text", () => {
         store.object.nestedText = new SyncedText("hello");
         observeDeep(store.object.nestedText, fnSpy1);
     
-        expect(fnSpy1).toBeCalledTimes(0);
+        expect(fnSpy1).toHaveBeenCalledTimes(0);
         store.object.nestedText.insert(0, "hello");
-        expect(fnSpy1).toBeCalledTimes(1);
+        expect(fnSpy1).toHaveBeenCalledTimes(1);
       });
 });
